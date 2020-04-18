@@ -1,0 +1,16 @@
+{
+  "name": "mongo-begin",
+  "version": "1.0.0",
+  "description": "brew services start mongodb-community@4.2 brew services stop mongodb-community@4.2",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^7.1.1",
+    "mongoose": "^5.9.9"
+  }
+}
