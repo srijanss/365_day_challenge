@@ -1,0 +1,27 @@
+:root {
+  --n: 1;
+}
+.container {
+  overflow-x: hidden;
+  padding: 0;
+}
+.img__container {
+  display: flex;
+  width: 100%;
+  width: calc(var(--n) * 100%);
+  height: 52vw;
+  max-height: 100vh;
+  overflow-y: hidden;
+  transform: translate(calc(var(--i, 0) / var(--n) * -100% + var(--tx, 0px)));
+}
+
+.smooth {
+  transition: transform 0.5s ease-in;
+}
+
+.img__container img {
+  width: 100%;
+  width: calc(100% / var(--n));
+  user-select: none;
+  pointer-events: none;
+}
