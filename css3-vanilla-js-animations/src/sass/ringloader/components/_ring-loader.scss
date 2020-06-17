@@ -1,0 +1,36 @@
+.ring-loader__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+
+  .scene {
+    margin: 0 0.1em;
+    perspective: 7em;
+  }
+
+  .ring {
+    display: grid;
+    grid-gap: 5em;
+    transform-style: preserve-3d;
+    animation: r 2s linear calc(var(--k) * 0.5 * 0.2s) infinite;
+
+    &::before,
+    &::after {
+      animation: inherit;
+      animation-direction: reverse;
+      content: "🎾";
+    }
+
+    &::after {
+      filter: hue-rotate(0.5turn);
+    }
+  }
+}
+
+@keyframes r {
+  0% {
+    transform: rotateX(1turn);
+  }
+}
