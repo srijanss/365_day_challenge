@@ -2,3 +2,69 @@ body {
   height: 100vh;
   background-color: #2d2d2d;
 }
+.page-list__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+
+  .page-list {
+    $page-width: 500px;
+    $number-of-items: 2;
+    position: relative;
+    width: $page-width;
+    height: 250px;
+    display: flex;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    // background-color: tomato;
+
+    a {
+      text-decoration: none;
+      color: #2d2d2d;
+    }
+
+    &:hover {
+      width: $page-width * 2;
+      .item {
+        &:nth-child(n) {
+          left: calc(var(--k) * 250px);
+        }
+      }
+    }
+
+    .item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 250px;
+      background-color: #f7f7f7;
+      border-radius: 5px;
+      box-shadow: -3px 5px 5px 0px rgba(0, 0, 0, 0.5),
+        -3px 0px 2px 0px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s 0.2s ease-in;
+      transform: scale(0.9);
+      z-index: 1;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      h6 {
+        font-size: 2rem;
+        text-transform: uppercase;
+      }
+
+      &:nth-child(n) {
+        left: calc(var(--k) * 2 * 5%);
+      }
+      &:hover {
+        z-index: 9;
+        transform: scale(1);
+        cursor: pointer;
+      }
+    }
+  }
+}
