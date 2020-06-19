@@ -18,17 +18,20 @@
     top: 50%;
     left: 50%;
     transform-style: preserve-3d;
-    // transform: rotateY(20deg) rotateX(60deg);
-    animation: cube-rotate 5s ease-in-out infinite;
+    transform: rotate3d(var(--i, -7), var(--j, 8), 0, var(--a, 47deg))
+      var(--p, unquote(" "));
+    // animation: cube-rotate 5s ease-in-out infinite alternate;
 
     .cube__face {
+      --i: 0;
+      --j: 1;
       margin: -0.5 * $cube-edge;
       width: $cube-edge;
       height: $cube-edge;
       // box-shadow: 0 0 0 2px;
       text-align: center;
       line-height: $cube-edge;
-      transform: rotate3d(var(--i, 0), var(--j, 1), 0, var(--a))
+      transform: rotate3d(var(--i), var(--j), 0, var(--a))
         translateZ(0.5 * $cube-edge);
 
       &:nth-child(n + 5) {
@@ -66,6 +69,12 @@
 
 @keyframes cube-rotate {
   to {
-    transform: rotateY(1turn) rotateX(1turn);
+    transform: rotateY(1turn) rotateX(1turn) scale3d(0.9, 0.9, 0.9);
   }
+  // 0% {
+  //   transform: rotateY(90deg) rotateX(90deg) scale3d(0.5, 0.5, 0.5);
+  // }
+  // 100% {
+  //   transform: rotateY(180deg) rotateX(180deg);
+  // }
 }
