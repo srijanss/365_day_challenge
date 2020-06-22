@@ -1,0 +1,106 @@
+.shapes__wrapper {
+  .shape-1 {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 200px;
+    height: 100px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+    filter: saturate(70%) contrast(85%);
+    background-image: linear-gradient(
+      to bottom right,
+      rgba(255, 0, 0, 0.5) 25%,
+      rgba(255, 0, 255, 0.8)
+    );
+    margin: 1em;
+  }
+
+  #oval {
+    border-radius: 100px / 50px;
+  }
+
+  #box-1 {
+    border-radius: 100px 50px;
+  }
+  #box-2 {
+    border-radius: 25% 10%;
+  }
+  #box-3 {
+    border-radius: 50%/100%;
+  }
+  #box-4 {
+    border-radius: 10% 30% 50% 70%;
+  }
+  #box-5 {
+    border-radius: 10% / 50%;
+  }
+  #box-6 {
+    border-radius: 10px 100px / 120px;
+  }
+  #box-7 {
+    border-radius: 50% 20% / 10% 40%;
+  }
+
+  .shape-2 {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  #triangle-up {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 100px solid red;
+    border-right: 50px solid transparent;
+    border-left: 50px solid transparent;
+  }
+
+  #triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-left: 100px solid red;
+  }
+
+  #triangle-down {
+    width: 0;
+    height: 0;
+    border-top: 100px solid red;
+    border-bottom: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-left: 50px solid transparent;
+  }
+
+  #triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 100px solid red;
+    border-left: 50px solid transparent;
+  }
+
+  #curved-arrow {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-right: 25px solid red;
+    transform: rotate(10deg);
+    margin: 4em;
+    &::after {
+      content: "";
+      position: absolute;
+      border: 0 solid transparent;
+      border-top: 7px solid red;
+      border-radius: 20px 0 0 0;
+      top: -30px;
+      left: -22px;
+      width: 35px;
+      height: 25px;
+      transform: rotate(45deg);
+    }
+  }
+}
