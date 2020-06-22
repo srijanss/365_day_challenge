@@ -82,6 +82,38 @@
     border-left: 50px solid transparent;
   }
 
+  #triangle-top-left {
+    width: 0;
+    height: 0;
+    border-top: 50px solid red;
+    border-left: 50px solid red;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+  }
+  #triangle-top-right {
+    width: 0;
+    height: 0;
+    border-top: 50px solid red;
+    border-right: 50px solid red;
+    border-left: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+  }
+  #triangle-bottom-right {
+    width: 0;
+    height: 0;
+    border-bottom: 50px solid red;
+    border-right: 50px solid red;
+    border-left: 50px solid transparent;
+    border-top: 50px solid transparent;
+  }
+  #triangle-bottom-left {
+    width: 0;
+    height: 0;
+    border-bottom: 50px solid red;
+    border-left: 50px solid red;
+    border-right: 50px solid transparent;
+    border-top: 50px solid transparent;
+  }
   #curved-arrow {
     position: relative;
     width: 0;
@@ -101,6 +133,81 @@
       width: 35px;
       height: 25px;
       transform: rotate(45deg);
+    }
+  }
+
+  #trapezoid {
+    border-bottom: 100px solid red;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    height: 0;
+    width: 100px;
+  }
+
+  #parallelogram {
+    width: 150px;
+    height: 100px;
+    transform: skew(20deg);
+    background: red;
+  }
+
+  #star-six {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+    position: relative;
+    &::after {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-top: 100px solid red;
+      position: absolute;
+      content: "";
+      top: 30px;
+      left: -50px;
+    }
+  }
+
+  #star-five {
+    margin: 50px 0;
+    position: relative;
+    display: block;
+    color: red;
+    width: 0;
+    height: 0;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid red;
+    border-left: 100px solid transparent;
+    transform: rotate(35deg);
+    &::before {
+      border-bottom: 80px solid red;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      position: absolute;
+      height: 0;
+      width: 0;
+      top: -45px;
+      left: -65px;
+      display: block;
+      content: "";
+      transform: rotate(-35deg);
+    }
+    &::after {
+      position: absolute;
+      display: block;
+      color: red;
+      top: 3px;
+      left: -105px;
+      width: 0px;
+      height: 0px;
+      border-right: 100px solid transparent;
+      border-bottom: 70px solid red;
+      border-left: 100px solid transparent;
+      transform: rotate(-70deg);
+      content: "";
     }
   }
 }
