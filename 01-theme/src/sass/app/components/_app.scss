@@ -3,6 +3,7 @@ $navbar-height: 100px;
 $footer-height: 550px;
 $theme-text-color: #2d2d2d;
 $theme-background-color: #fff;
+$theme-secondary-color: #d6dee0;
 
 *,
 *::before,
@@ -26,7 +27,7 @@ body {
       text-decoration: none;
     }
     &:hover {
-      color: #d6dee0;
+      color: $theme-secondary-color;
     }
   }
 }
@@ -41,7 +42,7 @@ header {
   .top-banner {
     width: 100%;
     height: $navbar-height/2;
-    background-color: #d6dee0;
+    background-color: $theme-secondary-color;
   }
 
   .navbar__wrapper {
@@ -78,8 +79,8 @@ header {
         text-transform: uppercase;
         padding: 0 1em;
       }
-      #shop-dropdown,
-      #contact-us-dropdown {
+      #shop-dropdown-link,
+      #contact-us-dropdown-link {
         position: relative;
         &::after {
           content: "";
@@ -93,8 +94,8 @@ header {
           transform: rotate(45deg);
         }
         &:hover::after {
-          border-right: 1px solid #d6dee0;
-          border-bottom: 1px solid #d6dee0;
+          border-right: 1px solid $theme-secondary-color;
+          border-bottom: 1px solid $theme-secondary-color;
         }
       }
     }
@@ -112,6 +113,31 @@ header {
         text-transform: uppercase;
         padding: 0 1em;
       }
+    }
+  }
+
+  .shop__dropdown,
+  .contact-us__dropdown {
+    position: absolute;
+    top: calc(1.5 * #{$navbar-height});
+    left: 0;
+    width: 100%;
+    background-color: $theme-background-color;
+    border-bottom: 1px solid $theme-secondary-color;
+    transform-origin: top;
+    transform: scaleY(var(--k, 0));
+    transition: transform 0.2s linear;
+    &:hover {
+      transform: none;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(#{$navbar-height}/ -2.5);
+      right: 0;
+      width: 90%;
+      height: calc(#{$navbar-height}/ 2.5);
+      background-color: $theme-background-color;
     }
   }
 }
@@ -136,7 +162,7 @@ footer {
   background-color: $theme-background-color;
 
   section {
-    border-top: 1px solid #d6dee0;
+    border-top: 1px solid $theme-secondary-color;
     padding: 2em 0;
   }
 
