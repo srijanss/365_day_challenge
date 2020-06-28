@@ -82,6 +82,15 @@ header {
       #shop-dropdown-link,
       #contact-us-dropdown-link {
         position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: calc(#{$navbar-height}/ -2.5);
+          right: 0;
+          width: 100%;
+          height: calc(#{$navbar-height}/ 2.5);
+          background-color: $theme-background-color;
+        }
         &::after {
           content: "";
           position: absolute;
@@ -130,15 +139,6 @@ header {
     &:hover {
       transform: none;
     }
-    &::before {
-      content: "";
-      position: absolute;
-      top: calc(#{$navbar-height}/ -2.5);
-      right: 0;
-      width: 90%;
-      height: calc(#{$navbar-height}/ 2.5);
-      background-color: $theme-background-color;
-    }
   }
 }
 
@@ -175,6 +175,8 @@ footer {
       input {
         height: 45px;
         width: 250px;
+        // border: none;
+        border: 1px solid $theme-text-color;
         &::placeholder {
           text-align: center;
         }
